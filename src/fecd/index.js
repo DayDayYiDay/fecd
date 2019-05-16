@@ -5,6 +5,7 @@ const program = require('commander');
 const tarDir = require('../../lib/tar');
 const uploadFile = require('../../lib/upload');
 const pkg = require('../../package');
+const fecdInfo = require('../../.fecd');
 
 const tarName = 'my-tarball.tar.gz';
 
@@ -42,4 +43,8 @@ if (process.argv.length === 2) program.outputHelp();
 // if (program.small) console.log('- small pizza size');
 // if (program.pizzaType) console.log(`- ${program.pizzaType}`);
 
-tarDir(tarName, uploadFile);
+function upload(name, tabBall) {
+  uploadFile(fecdInfo.server, name, tabBall);
+}
+
+tarDir(fecdInfo.dir, tarName, upload);
