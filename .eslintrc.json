@@ -1,19 +1,20 @@
 {
-    "env": {
-        "es6": true,
-        "node": true
-    },
-    "extends": "airbnb-base",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "rules": {
-      "no-console": "off",
-      "no-underscore-dangle": "off"
-    }
+  "env": {
+      "es6": true,
+      "node": true
+  },
+  "extends": ["airbnb-base", "plugin:prettier/recommended","prettier"],
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": "off",
+    "no-underscore-dangle": "off"
+  }
 }
