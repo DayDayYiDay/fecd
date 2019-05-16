@@ -62,4 +62,5 @@ typings/
 # next.js build output
 .next
 .coveralls.yml
+.idea
 package-lock.json
