@@ -16,7 +16,9 @@
     "git-push": "git push origin gh-pages --force && git checkout master",
     "deploy": "npm run build && npm run git-commit && npm run git-push",
     "lint": "eslint --fix bin",
-    "test": "npm run build && mocha -t 5000"
+    "test": "mocha -t 5000",
+    "coverage": "nyc npm run test",
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -38,6 +40,7 @@
     "faas-cli": "^2.6.6",
     "istanbul": "^0.4.5",
     "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "prettier": "^1.17.1"
   },
   "bugs": {

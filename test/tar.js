@@ -1,5 +1,7 @@
 const chai = require('chai');
 const fs = require('fs');
+const rimraf = require('rimraf');
+
 const tarDir = require('../lib/tar');
 
 const expect = chai.expect;
@@ -11,6 +13,7 @@ describe('Array', function() {
         var stats = fs.statSync('test.tar.gz');
         var fileSizeInBytes = stats["size"]
         expect(fileSizeInBytes).to.be.above(0)
+        rimraf(tarName, () => {});
       })
     });
   });
