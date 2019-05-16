@@ -1,0 +1,48 @@
+{
+  "name": "fecd",
+  "version": "1.0.0",
+  "description": "frontend continuous deploy",
+  "main": "src/index.js",
+  "author": "Seaver Fung",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DayDayYiDay/fecd.git"
+  },
+  "scripts": {
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "build": "...",
+    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
+    "git-push": "git push origin gh-pages --force && git checkout master",
+    "deploy": "npm run build && npm run git-commit && npm run git-push"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0",
+    "form-data": "^2.3.3",
+    "rimraf": "^2.6.3",
+    "tar": "^4.4.8"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "faas-cli": "^2.6.6",
+    "istanbul": "^0.4.5"
+  },
+  "bugs": {
+    "url": "https://github.com/DayDayYiDay/fecd/issues"
+  },
+  "homepage": "https://github.com/DayDayYiDay/fecd#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "deploy"
+  ],
+  "bin": {
+    "fecd": "bin/fecd.js"
+  }
+}
