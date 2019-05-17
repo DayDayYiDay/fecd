@@ -7,7 +7,11 @@ const uploadFile = require('../../lib/upload');
 const pkg = require('../../package');
 const fecdInfo = require('../../.fecd');
 
-const tarName = 'my-tarball.tar.gz';
+const projName = pkg.name;
+const tarName = `${`${new Date()
+  .toISOString()
+  .replace(/T/, ' ')
+  .replace(/\..+/, '')}_${projName}`}.tar.gz`;
 
 function debug(value, dummyPrevious) {
   console.log(value, dummyPrevious);
@@ -43,8 +47,8 @@ if (process.argv.length === 2) program.outputHelp();
 // if (program.small) console.log('- small pizza size');
 // if (program.pizzaType) console.log(`- ${program.pizzaType}`);
 
-function upload(name, tabBall) {
-  uploadFile(fecdInfo.server, name, tabBall);
+function upload(name, tabBall, shaHash) {
+  uploadFile(fecdInfo.server, name, tabBall, shaHash);
 }
 
 tarDir(fecdInfo.dir, tarName, upload);
