@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 const program = require('commander');
+const path = require('path');
 
 const tarDir = require('../../lib/tar');
 const uploadFile = require('../../lib/upload');
 const pkg = require('../../package');
-const fecdInfo = require('./.fecd');
+const fecdInfo = require('../../.fecd');
 
 const projName = pkg.name;
 const tarName = `${`${new Date()
@@ -46,6 +47,8 @@ if (process.argv.length === 2) program.outputHelp();
 // if (program.deploy) console.log(program.opts());
 // if (program.small) console.log('- small pizza size');
 // if (program.pizzaType) console.log(`- ${program.pizzaType}`);
+
+console.log(process.cwd(), '  ', path.resolve(__dirname))
 
 function upload(name, tabBall, shaHash) {
   uploadFile(fecdInfo.server, name, tabBall, shaHash);
