@@ -1,6 +1,6 @@
 {
   "name": "fecd",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "frontend continuous deploy",
   "main": "src/index.js",
   "author": "Seaver Fung",
