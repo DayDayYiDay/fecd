@@ -5,10 +5,12 @@ const path = require('path');
 
 const tarDir = require('../../lib/tar');
 const uploadFile = require('../../lib/upload');
-const pkg = require('../../package');
 
 console.log(process.cwd(), '  ', path.resolve(__dirname));
-const fecdInfo = require('../../.fecd');
+const pkgPath = `${process.cwd()}/package`;
+const pkg = require(pkgPath);
+
+const fecdInfo = require(`${process.cwd()}/.fecd`);
 
 const projName = pkg.name;
 const tarName = `${`${new Date()
