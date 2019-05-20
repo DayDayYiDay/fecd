@@ -5,7 +5,7 @@ const program = require('commander');
 const tarDir = require('../../lib/tar');
 const uploadFile = require('../../lib/upload');
 const pkg = require('../../package');
-const fecdInfo = require('../../.fecd');
+const fecdInfo = require('./.fecd');
 
 const projName = pkg.name;
 const tarName = `${`${new Date()
