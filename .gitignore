@@ -64,3 +64,4 @@ typings/
 .coveralls.yml
 .idea
 package-lock.json
+.fecd.json
