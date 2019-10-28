@@ -4,6 +4,8 @@
 [![Coverage Status](https://coveralls.io/repos/github/DayDayYiDay/fecd/badge.svg?branch=master)](https://coveralls.io/github/DayDayYiDay/fecd?branch=master)
 
 front end continuoud deploy
+make sure you have run https://github.com/DayDayYiDay/atreus-backend on server
+
 
 1. create .fecd.json like
 ```
@@ -12,4 +14,13 @@ front end continuoud deploy
   "dir": "dist"
 }
 ```
-2. run fecd
+2. after build your project run 'fecd' to deploy 'dist' folder to server
+```
+# fecd
+⠋ making tarball
+⠋ Uploading /Folder/Of/Your/Project/dist
+✔ tar done
+23585552731f5d6b7866f8aba67f761c78e74728dccc902b926164a6abasdfe
+✔ upload success
+cleaned tarball
+```
