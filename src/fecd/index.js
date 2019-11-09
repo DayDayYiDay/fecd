@@ -7,8 +7,7 @@ const tarDir = require('../../lib/tar');
 const uploadFile = require('../../lib/upload');
 
 console.log(process.cwd(), '  ', path.resolve(__dirname));
-const pkgPath = `${process.cwd()}/package`;
-const pkg = require(pkgPath);
+const pkg = require(`${process.cwd()}/package`);
 
 const fecdInfo = require(`${process.cwd()}/.fecd`);
 
